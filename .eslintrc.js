@@ -23,5 +23,6 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/state-in-constructor': 'off',
     'react/jsx-fragments': 'off',
+    'no-underscore-dangle': 'off',
   },
 };
