@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import LoadingBar from 'react-redux-loading-bar';
 import { handleInitialData } from './actions/shared';
 
 import Dashboard from './components/Dashboard';
@@ -10,7 +11,12 @@ function App(props) {
   useEffect(() => {
     props.handleInitialData();
   }, []);
-  return <div>{loading ? null : <Dashboard />}</div>;
+  return (
+    <div>
+      <LoadingBar />
+      {loading ? null : <Dashboard />}
+    </div>
+  );
 }
 
 App.propTypes = {
