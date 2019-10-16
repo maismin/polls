@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-function Dashboard(props) {
+function Dashboard({ answered, unanswered }) {
   const [showAnswered, setShowAnswered] = useState(false);
 
-  const { answered, unanswered } = props;
   const list = showAnswered ? answered : unanswered;
 
   return (

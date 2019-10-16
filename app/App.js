@@ -5,6 +5,7 @@ import LoadingBar from 'react-redux-loading-bar';
 import { handleInitialData } from './actions/shared';
 
 import Dashboard from './components/Dashboard';
+import Leaderboard from './components/Leaderboard';
 
 function App(props) {
   const { loading } = props;
@@ -14,7 +15,7 @@ function App(props) {
   return (
     <div>
       <LoadingBar />
-      {loading ? null : <Dashboard />}
+      {loading ? null : <Leaderboard />}
     </div>
   );
 }
