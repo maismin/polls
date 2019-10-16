@@ -7,6 +7,7 @@ import { handleInitialData } from './actions/shared';
 import Dashboard from './components/Dashboard';
 import Leaderboard from './components/Leaderboard';
 import AddPoll from './components/AddPoll';
+import Poll from './components/Poll';
 
 function App(props) {
   const { loading } = props;
@@ -16,7 +17,9 @@ function App(props) {
   return (
     <div>
       <LoadingBar />
-      {loading ? null : <AddPoll />}
+      {loading ? null : (
+        <Poll match={{ params: { id: 'loxhs1bqm25b708cmbf3g' } }} />
+      )}
     </div>
   );
 }
