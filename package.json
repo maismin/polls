@@ -53,6 +53,7 @@
     "react-redux-loading-bar": "^4.4.0",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
   }
 }

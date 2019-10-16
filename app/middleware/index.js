@@ -1,7 +1,7 @@
 import thunk from 'redux-thunk';
 import { applyMiddleware } from 'redux';
-import logger from './logger';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const middleware = [thunk, logger];
+const middleware = [thunk];
 
-export default applyMiddleware(...middleware);
+export default composeWithDevTools(applyMiddleware(...middleware));
