@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 function Dashboard({ answered, unanswered }) {
@@ -28,7 +29,9 @@ function Dashboard({ answered, unanswered }) {
       </div>
       <ul className="dashboard-list">
         {list.map(poll => (
-          <li key={poll.id}>{poll.question}</li>
+          <li key={poll.id}>
+            <Link to={`polls/${poll.id}`}>{poll.question}</Link>
+          </li>
         ))}
       </ul>
     </div>

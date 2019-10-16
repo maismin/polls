@@ -16,7 +16,7 @@ function AddPoll(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // Redirect to /
+    props.history.push('/');
     props.handleAddPoll({
       question,
       a: optionA,

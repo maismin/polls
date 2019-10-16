@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import LoadingBar from 'react-redux-loading-bar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { handleInitialData } from './actions/shared';
 
+import Nav from './components/Nav';
 import Dashboard from './components/Dashboard';
 import Leaderboard from './components/Leaderboard';
 import AddPoll from './components/AddPoll';
@@ -15,12 +17,22 @@ function App(props) {
     props.handleInitialData();
   }, []);
   return (
-    <div>
-      <LoadingBar />
-      {loading ? null : (
-        <Poll match={{ params: { id: 'loxhs1bqm25b708cmbf3g' } }} />
-      )}
-    </div>
+    <Router>
+      <Fragment>
+        <LoadingBar />
+        <div className="container">
+          <Nav />
+          {loading ? null : (
+            <div>
+              <Route path="/" exact component={Dashboard} />
+              <Route path="/leaderboard" exact component={Leaderboard} />
+              <Route path="/polls/:id" exact component={Poll} />
+              <Route path="/add" exact component={AddPoll} />
+            </div>
+          )}
+        </div>
+      </Fragment>
+    </Router>
   );
 }
 
