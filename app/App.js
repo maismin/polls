@@ -6,6 +6,7 @@ import { handleInitialData } from './actions/shared';
 
 import Dashboard from './components/Dashboard';
 import Leaderboard from './components/Leaderboard';
+import AddPoll from './components/AddPoll';
 
 function App(props) {
   const { loading } = props;
@@ -15,7 +16,7 @@ function App(props) {
   return (
     <div>
       <LoadingBar />
-      {loading ? null : <Leaderboard />}
+      {loading ? null : <AddPoll />}
     </div>
   );
 }

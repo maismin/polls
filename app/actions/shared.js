@@ -4,7 +4,7 @@ import { receiveUsers } from './users';
 import { receivePolls } from './polls';
 import { setAuthedUser } from './authedUser';
 
-const AUTHED_ID = 'simonmai';
+const AUTHED_ID = 'tylermcginnis';
 
 export const handleInitialData = () => async dispatch => {
   dispatch(showLoading());
